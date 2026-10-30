@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="purpleTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <filter id="shadow2" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bgGrad2)"/>
+  <circle cx="200" cy="100" r="140" fill="#8b5cf6" opacity="0.08"/>
+  <circle cx="650" cy="350" r="170" fill="#06b6d4" opacity="0.08"/>
+
+  <!-- Desktop App Window -->
+  <g transform="translate(60, 45)" filter="url(#shadow2)">
+    <rect width="680" height="360" rx="10" fill="#0d1527" stroke="#1e293b" stroke-width="2"/>
+    <!-- Java Swing style title bar -->
+    <rect width="680" height="38" rx="10" fill="#1e293b"/>
+    <rect x="15" y="10" width="16" height="16" rx="3" fill="#ea580c"/>
+    <text x="23" y="22" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">☕</text>
+    <text x="42" y="24" font-family="'JetBrains Mono', monospace" font-size="12" fill="#cbd5e1">TaskForge v2.4 // Algorithmic Process &amp; Task Scheduler (JVM)</text>
+    <circle cx="620" cy="19" r="6" fill="#64748b"/>
+    <circle cx="640" cy="19" r="6" fill="#64748b"/>
+    <circle cx="660" cy="19" r="6" fill="#ef4444"/>
+
+    <!-- App Content Layout -->
+    <!-- Sidebar -->
+    <rect x="0" y="38" width="160" height="322" fill="#0b1120"/>
+    <rect x="15" y="55" width="130" height="28" rx="5" fill="#1e293b"/>
+    <text x="25" y="73" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38bdf8">⚡ Priority Queue</text>
+    <text x="25" y="112" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748b">📊 Round Robin</text>
+    <text x="25" y="145" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748b">⏱ Shortest Job (SJF)</text>
+    <text x="25" y="178" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748b">💾 Memory Heap</text>
+    <text x="25" y="211" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748b">📁 Event Log</text>
+
+    <!-- Main Workspace -->
+    <!-- Metrics header -->
+    <rect x="180" y="55" width="145" height="60" rx="8" fill="#131e3a" stroke="#1e293b"/>
+    <text x="195" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#94a3b8">Active Threads</text>
+    <text x="195" y="102" font-family="'JetBrains Mono', monospace" font-weight="bold" font-size="20" fill="#38bdf8">8 Cores</text>
+
+    <rect x="340" y="55" width="155" height="60" rx="8" fill="#131e3a" stroke="#1e293b"/>
+    <text x="355" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#94a3b8">Scheduled Tasks</text>
+    <text x="355" y="102" font-family="'JetBrains Mono', monospace" font-weight="bold" font-size="20" fill="#34d399">148 Ready</text>
+
+    <rect x="510" y="55" width="150" height="60" rx="8" fill="#131e3a" stroke="#1e293b"/>
+    <text x="525" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#94a3b8">CPU Utilization</text>
+    <text x="525" y="102" font-family="'JetBrains Mono', monospace" font-weight="bold" font-size="20" fill="#f43f5e">12.4%</text>
+
+    <!-- Table of Tasks -->
+    <rect x="180" y="130" width="480" height="175" rx="8" fill="#111c35" stroke="#1e293b"/>
+    <!-- Table Header -->
+    <rect x="180" y="130" width="480" height="30" rx="6" fill="#1e293b"/>
+    <text x="195" y="150" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">PID</text>
+    <text x="245" y="150" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">Task Name</text>
+    <text x="380" y="150" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">Priority</text>
+    <text x="470" y="150" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">Burst (ms)</text>
+    <text x="580" y="150" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">Status</text>
+
+    <!-- Row 1 -->
+    <text x="195" y="180" font-family="'JetBrains Mono', monospace" font-size="11" fill="#cbd5e1">0x81F</text>
+    <text x="245" y="180" font-family="'Inter', sans-serif" font-size="11" fill="#f1f5f9">CacheSyncWorker</text>
+    <rect x="380" y="167" width="55" height="18" rx="4" fill="#dc2626" opacity="0.3"/>
+    <text x="390" y="180" font-family="'JetBrains Mono', monospace" font-size="9" fill="#f87171">CRITICAL</text>
+    <text x="470" y="180" font-family="'JetBrains Mono', monospace" font-size="11" fill="#cbd5e1">45 ms</text>
+    <text x="580" y="180" font-family="'JetBrains Mono', monospace" font-size="11" fill="#34d399">RUNNING</text>
+
+    <!-- Row 2 -->
+    <text x="195" y="215" font-family="'JetBrains Mono', monospace" font-size="11" fill="#cbd5e1">0x82A</text>
+    <text x="245" y="215" font-family="'Inter', sans-serif" font-size="11" fill="#f1f5f9">DiskIOFlusher</text>
+    <rect x="380" y="202" width="55" height="18" rx="4" fill="#d97706" opacity="0.3"/>
+    <text x="395" y="215" font-family="'JetBrains Mono', monospace" font-size="9" fill="#fbbf24">HIGH</text>
+    <text x="470" y="215" font-family="'JetBrains Mono', monospace" font-size="11" fill="#cbd5e1">120 ms</text>
+    <text x="580" y="215" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38bdf8">WAITING</text>
+
+    <!-- Row 3 -->
+    <text x="195" y="250" font-family="'JetBrains Mono', monospace" font-size="11" fill="#cbd5e1">0x84E</text>
+    <text x="245" y="250" font-family="'Inter', sans-serif" font-size="11" fill="#f1f5f9">GarbageCollectorPass</text>
+    <rect x="380" y="237" width="55" height="18" rx="4" fill="#2563eb" opacity="0.3"/>
+    <text x="392" y="250" font-family="'JetBrains Mono', monospace" font-size="9" fill="#60a5fa">NORMAL</text>
+    <text x="470" y="250" font-family="'JetBrains Mono', monospace" font-size="11" fill="#cbd5e1">310 ms</text>
+    <text x="580" y="250" font-family="'JetBrains Mono', monospace" font-size="11" fill="#34d399">RUNNING</text>
+
+    <!-- Bottom Controls -->
+    <rect x="180" y="315" width="110" height="28" rx="5" fill="url(#purpleTeal)"/>
+    <text x="235" y="333" font-family="'Inter', sans-serif" font-weight="600" font-size="11" fill="#ffffff" text-anchor="middle">+ New Process</text>
+    <rect x="300" y="315" width="85" height="28" rx="5" fill="#1e293b"/>
+    <text x="342" y="333" font-family="'Inter', sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Step Clock</text>
+  </g>
+</svg>
+

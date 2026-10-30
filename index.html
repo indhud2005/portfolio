@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>B. Indhuja | Software Engineer &amp; Web Developer Portfolio</title>
+  <meta name="title" content="B. Indhuja | Software Engineer & Web Developer Portfolio">
+  <meta name="description" content="Portfolio of B. Indhuja - Fresher / Graduate Software Engineer based in Chennai, India. Specializing in Web Development, Java, Python, React, and AI-driven solutions. Ready for hire.">
+  <meta name="keywords" content="B. Indhuja, Indhuja Bandreddi, Software Engineer, Web Developer, Graduate Software Engineer, Fresher Developer, Chennai Developer, Java, Python, React.js, Artificial Intelligence, Portfolio">
+  <meta name="author" content="B. Indhuja">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://indhud2005.github.io/">
+  <meta property="og:title" content="B. Indhuja | Software Engineer Portfolio">
+  <meta property="og:description" content="Graduate Software Engineer transitioning to a professional career. Passionate about building clean, performant, user-first web applications.">
+  <meta property="og:image" content="assets/profile.svg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://indhud2005.github.io/">
+  <meta property="twitter:title" content="B. Indhuja | Software Engineer Portfolio">
+  <meta property="twitter:description" content="Graduate Software Engineer transitioning to a professional career. Passionate about building clean, performant, user-first web applications.">
+  <meta property="twitter:image" content="assets/profile.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Devicon CDN for Technology Badges -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Accessible Skip to Content Link -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       1. NAVBAR
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" aria-label="B. Indhuja Portfolio Homepage">
+        <span class="logo-bracket">&lt;</span>B.Indhuja<span class="logo-bracket">/&gt;</span>
+        <span class="logo-dot" aria-hidden="true"></span>
+      </a>
+
+      <!-- Desktop & Mobile Navigation Links -->
+      <nav aria-label="Primary Navigation">
+        <ul id="nav-links" class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#recruiter">Recruiter Info</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions: Resume CTA & Theme Toggle -->
+      <div class="nav-actions">
+        <a href="assets/Indhuja_Bandreddi_Resume.pdf" download="Indhuja_Bandreddi_Resume.pdf" class="btn btn-outline btn-sm" aria-label="Download B. Indhuja Resume in PDF format">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Resume
+        </a>
+
+        <!-- Light/Dark Mode Switch -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle light and dark color theme">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+          </svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MAIN CONTENT
+       ========================================================================== -->
+  <main id="main-content">
+
+    <!-- ==========================================================================
+         2. HERO SECTION
+         ========================================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="hero-bg-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-content fade-in-up">
+          <!-- Small green pulsing badge -->
+          <div class="hire-badge">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Ready for Hire // Chennai, India
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">B. Indhuja</span>
+          </h1>
+
+          <!-- Typing animation cycling container -->
+          <div class="hero-typewriter-container" aria-label="Role: Software Engineer, Web Developer, Java & Python Developer, AI Enthusiast">
+            <span id="typewriter-text"></span>
+            <span class="typewriter-cursor" aria-hidden="true"></span>
+          </div>
+
+          <p class="hero-description">
+            Graduate Engineering student transitioning to a professional career. Passionate about writing clean, efficient code and building responsive, user-first web applications. Actively looking for a Software Engineer role.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn btn-primary">
+              Hire Me
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#projects" class="btn btn-outline">
+              View Work
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Right: Profile Photo with Glowing Border -->
+        <div class="hero-media fade-in-up">
+          <div class="profile-glow-wrapper">
+            <div class="profile-glow-ring" aria-hidden="true"></div>
+            <img src="assets/profile.svg" alt="B. Indhuja - Software Engineer Portrait" class="profile-avatar-img" width="290" height="290">
+            <!-- Decorative tech badges around avatar -->
+            <div class="floating-chip chip-1" aria-hidden="true">
+              <i class="devicon-java-plain"></i> Java / OOP
+            </div>
+            <div class="floating-chip chip-2" aria-hidden="true">
+              <i class="devicon-react-original"></i> React &amp; AI
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. RECRUITER DASHBOARD
+         ========================================================================== -->
+    <section id="recruiter" class="section">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-tag">Direct Overview</span>
+          <h2 class="section-title">Recruiter Dashboard</h2>
+          <p class="section-subtitle">Everything hiring teams and engineering managers need to evaluate candidate fit in 30 seconds.</p>
+        </div>
+
+        <!-- Editor Window: candidate_overview.json -->
+        <div class="editor-window fade-in-up">
+          <div class="editor-header">
+            <div class="window-dots" aria-hidden="true">
+              <span class="window-dot dot-red"></span>
+              <span class="window-dot dot-yellow"></span>
+              <span class="window-dot dot-green"></span>
+            </div>
+            <div class="editor-title">
+              <span>📄</span> candidate_overview.json
+            </div>
+            <div class="editor-meta">200 OK • JSON</div>
+          </div>
+
+          <div class="editor-body">
+            <!-- 4 Critical Info Tiles -->
+            <div class="dashboard-grid">
+              <div class="info-tile">
+                <span class="tile-label">🎓 Education</span>
+                <div class="tile-value">B.E. Computer Science</div>
+                <div class="tile-sub">Engineering Graduate</div>
+              </div>
+
+              <div class="info-tile">
+                <span class="tile-label">🎯 Target Role</span>
+                <div class="tile-value">Software Engineer</div>
+                <div class="tile-sub">Full-Stack / Backend / Frontend</div>
+              </div>
+
+              <div class="info-tile">
+                <span class="tile-label">📍 Location</span>
+                <div class="tile-value">Chennai, Tamil Nadu, India</div>
+                <div class="tile-sub">Open to relocate / Remote</div>
+              </div>
+
+              <div class="info-tile">
+                <span class="tile-label">⚡ Availability</span>
+                <div class="tile-value">Immediate</div>
+                <div class="tile-sub">Ready to Join</div>
+              </div>
+            </div>
+
+            <!-- Quick Takeaway line -->
+            <div class="quick-takeaway-box">
+              <div class="takeaway-icon" aria-hidden="true">💡</div>
+              <p class="takeaway-text">
+                <strong>Quick Takeaway:</strong> Highly motivated graduate developer with hands-on project experience in web architectures, software engineering, and AI.
+              </p>
+            </div>
+
+            <!-- Stat Counters (Animated Count-Up) -->
+            <div id="recruiter-stats" class="recruiter-stats">
+              <div class="stat-card">
+                <span class="stat-number" data-target="4" data-suffix="+">0</span>
+                <span class="stat-label">Production Projects</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number" data-target="3" data-suffix="">0</span>
+                <span class="stat-label">Certifications</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number" data-target="1" data-suffix="">0</span>
+                <span class="stat-label">AI Industry Internship</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number" data-target="100" data-suffix="%">0</span>
+                <span class="stat-label">Immediate Joining</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. ABOUT ME
+         ========================================================================== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-tag">Background &amp; Philosophy</span>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">Bridging theoretical computer science foundations with hands-on full-stack development.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Column: 3 Short Paragraphs -->
+          <div class="about-bio fade-in-up">
+            <p>
+              My passion for technology began with writing simple scripts and dissecting algorithmic logic. That curiosity quickly transformed into building <strong>responsive web applications</strong> and architecting reliable software solutions with clean, maintainable code.
+            </p>
+            <p>
+              Throughout my engineering degree, I developed a strong foundation in <strong>HTML5, CSS3, JavaScript ES6+, React, Java, Python, and MySQL</strong>. I enjoy untangling complex algorithmic challenges, designing intuitive interfaces, and collaborating on systems that deliver measurable value.
+            </p>
+            <p>
+              As a fresher based in <strong>Chennai</strong>, I bring high energy, disciplined problem-solving, and a rapid learning curve. I am eagerly looking forward to joining an engineering team where I can contribute to production-grade applications while continually mastering new technologies.
+            </p>
+
+            <!-- Languages I Speak Block -->
+            <div class="languages-block">
+              <h3 class="languages-heading">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                Languages I Speak
+              </h3>
+              <div class="languages-grid">
+                <!-- Telugu -->
+                <div class="lang-pill">
+                  <div class="lang-info">
+                    <span class="lang-name">Telugu</span>
+                    <span class="lang-level">Native</span>
+                  </div>
+                  <div class="lang-dots" aria-label="Proficiency: Native (5 of 5)">
+                    <span class="lang-dot filled"></span>
+                    <span class="lang-dot filled"></span>
+                    <span class="lang-dot filled"></span>
+                    <span class="lang-dot filled"></span>
+                    <span class="lang-dot filled"></span>
+                  </div>
+                </div>
+
+                <!-- English -->
+                <div class="lang-pill">
+                  <div class="lang-info">
+                    <span class="lang-name">English</span>
+                    <span class="lang-level">Professional</span>
+                  </div>
+                  <div class="lang-dots" aria-label="Proficiency: Professional (5 of 5)">
+                    <span class="lang-dot filled"></span>
+                    <span class="lang-dot filled"></span>
+                    <span class="lang-dot filled"></span>
+                    <span class="lang-dot filled"></span>
+                    <span class="lang-dot filled"></span>
+                  </div>
+                </div>
+
+                <!-- Tamil -->
+                <div class="lang-pill">
+                  <div class="lang-info">
+                    <span class="lang-name">Tamil</span>
+                    <span class="lang-level">Conversational</span>
+                  </div>
+                  <div class="lang-dots" aria-label="Proficiency: Conversational (3 of 5)">
+                    <span class="lang-dot filled"></span>
+                    <span class="lang-dot filled"></span>
+                    <span class="lang-dot filled"></span>
+                    <span class="lang-dot"></span>
+                    <span class="lang-dot"></span>
+                  </div>
+                </div>
+
+                <!-- Hindi -->
+                <div class="lang-pill">
+                  <div class="lang-info">
+                    <span class="lang-name">Hindi</span>
+                    <span class="lang-level">Conversational</span>
+                  </div>
+                  <div class="lang-dots" aria-label="Proficiency: Conversational (3 of 5)">
+                    <span class="lang-dot filled"></span>
+                    <span class="lang-dot filled"></span>
+                    <span class="lang-dot filled"></span>
+                    <span class="lang-dot"></span>
+                    <span class="lang-dot"></span>
+                  </div>
+                </div>
+
+                <!-- German -->
+                <div class="lang-pill">
+                  <div class="lang-info">
+                    <span class="lang-name">German</span>
+                    <span class="lang-level">Conversational</span>
+                  </div>
+                  <div class="lang-dots" aria-label="Proficiency: Conversational (3 of 5)">
+                    <span class="lang-dot filled"></span>
+                    <span class="lang-dot filled"></span>
+                    <span class="lang-dot filled"></span>
+                    <span class="lang-dot"></span>
+                    <span class="lang-dot"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Fake Terminal Window "terminal.sh" -->
+          <div class="terminal-window fade-in-up">
+            <div class="terminal-header">
+              <div class="window-dots" aria-hidden="true">
+                <span class="window-dot dot-red"></span>
+                <span class="window-dot dot-yellow"></span>
+                <span class="window-dot dot-green"></span>
+              </div>
+              <span class="terminal-title">bash — terminal.sh (80x24)</span>
+            </div>
+
+            <div class="terminal-body">
+              <div>
+                <span class="terminal-prompt">indhuja@dev-box:~$</span>
+                <span class="terminal-cmd" id="term-cmd-text"></span>
+              </div>
+
+              <!-- Typed Output Body -->
+              <div id="term-output-body" class="terminal-output" style="display: none;">
+                <div><span class="term-key">NAME:</span> <span class="term-val">Indhuja Bandreddi</span></div>
+                <div><span class="term-key">LOCATION:</span> <span class="term-val">Chennai, India</span></div>
+                <div><span class="term-key">ROLE:</span> <span class="term-val">Software Engineer</span></div>
+                <div><span class="term-key">PASSION:</span> <span class="term-val">Web Development &amp; System Design</span></div>
+                <div><span class="term-key">CURRENT_FOCUS:</span> <span class="term-val">Full-Stack Cloud &amp; AI Engineering</span></div>
+              </div>
+
+              <div style="margin-top: 0.5rem;">
+                <span class="terminal-prompt">indhuja@dev-box:~$</span>
+                <span class="terminal-cursor" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. SKILLS & TECHNOLOGIES
+         ========================================================================== -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-tag">Technical Competencies</span>
+          <h2 class="section-title">Skills &amp; Technologies</h2>
+          <p class="section-subtitle">Core engineering disciplines, frameworks, and developer workflows I use to build scalable products.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Category 1: Frontend -->
+          <div class="skill-category-card fade-in-up">
+            <div class="category-header">
+              <div class="category-icon" aria-hidden="true">
+                <i class="devicon-html5-plain"></i>
+              </div>
+              <h3 class="category-title">Frontend</h3>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-html5-plain colored"></i> HTML5</span>
+                  <span class="skill-level-badge">Advanced</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="90%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-css3-plain colored"></i> CSS3 Flexbox &amp; Grid</span>
+                  <span class="skill-level-badge">Advanced</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="90%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-javascript-plain colored"></i> JavaScript ES6+</span>
+                  <span class="skill-level-badge">Intermediate</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="85%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-react-original colored"></i> React.js</span>
+                  <span class="skill-level-badge">Intermediate</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="80%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-chrome-plain colored"></i> Responsive Design</span>
+                  <span class="skill-level-badge">Advanced</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="92%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Backend & Databases -->
+          <div class="skill-category-card fade-in-up">
+            <div class="category-header">
+              <div class="category-icon" aria-hidden="true">
+                <i class="devicon-java-plain"></i>
+              </div>
+              <h3 class="category-title">Backend &amp; Databases</h3>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-java-plain colored"></i> Java</span>
+                  <span class="skill-level-badge">Intermediate</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="85%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-python-plain colored"></i> Python</span>
+                  <span class="skill-level-badge">Intermediate</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="80%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-nodejs-plain colored"></i> Node.js</span>
+                  <span class="skill-level-badge">Intermediate</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="85%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
+                  <span class="skill-level-badge">Intermediate</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="80%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-mysql-plain colored"></i> SQL MySQL / PostgreSQL</span>
+                  <span class="skill-level-badge">Intermediate</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="82%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-fastapi-plain colored"></i> REST APIs</span>
+                  <span class="skill-level-badge">Intermediate</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="85%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-python-plain colored"></i> Data Science Fundamentals</span>
+                  <span class="skill-level-badge">Basic</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="70%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-tensorflow-line colored"></i> Generative AI Fundamentals</span>
+                  <span class="skill-level-badge">Basic</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="70%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-tensorflow-line colored"></i> Artificial Intelligence</span>
+                  <span class="skill-level-badge">Intermediate</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="75%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Tools & Methods -->
+          <div class="skill-category-card fade-in-up">
+            <div class="category-header">
+              <div class="category-icon" aria-hidden="true">
+                <i class="devicon-git-plain"></i>
+              </div>
+              <h3 class="category-title">Tools &amp; Methods</h3>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-git-plain colored"></i> Git &amp; GitHub</span>
+                  <span class="skill-level-badge">Intermediate</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="85%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-vscode-plain colored"></i> VS Code</span>
+                  <span class="skill-level-badge">Advanced</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="90%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-cplusplus-plain colored"></i> OOP Concepts</span>
+                  <span class="skill-level-badge">Advanced</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="90%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap">🧠 Data Structures &amp; Algorithms</span>
+                  <span class="skill-level-badge">Intermediate</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="75%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name-wrap"><i class="devicon-linux-plain colored"></i> Linux Terminal</span>
+                  <span class="skill-level-badge">Basic</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="70%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. PROJECTS (MOST IMPORTANT SECTION)
+         ========================================================================== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-tag">Featured Work</span>
+          <h2 class="section-title">Projects</h2>
+          <p class="section-subtitle">Real applications demonstrating full-stack architecture, systems programming, and machine learning.</p>
+        </div>
+
+        <!-- Filter Buttons (JS Filtering) -->
+        <div class="project-filters fade-in-up" role="tablist" aria-label="Filter projects by category">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
+          <button class="filter-btn" data-filter="webdev" role="tab" aria-selected="false">Web Dev</button>
+          <button class="filter-btn" data-filter="softwareeng" role="tab" aria-selected="false">Software Eng</button>
+          <button class="filter-btn" data-filter="ai" role="tab" aria-selected="false">AI</button>
+        </div>
+
+        <!-- Dynamic Responsive Project Cards Grid (Rendered from JS Array) -->
+        <div id="projects-grid" class="projects-grid" aria-live="polite">
+          <!-- JavaScript will inject cards dynamically here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CERTIFICATIONS SECTION
+         ========================================================================== -->
+    <section id="certifications" class="section">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-tag">Verified Credentials</span>
+          <h2 class="section-title">Certifications</h2>
+          <p class="section-subtitle">Professional credentials, industry specializations, and completed technical coursework.</p>
+        </div>
+
+        <!-- Dynamic Responsive Grid (Rendered from JS Array: 3 cols desktop, 2 tablet, 1 mobile) -->
+        <div id="certifications-grid" class="certifications-grid" aria-live="polite">
+          <!-- JavaScript will inject cards dynamically here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         7. EDUCATION & MILESTONES
+         ========================================================================== -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-tag">Academic &amp; Professional Milestones</span>
+          <h2 class="section-title">Education &amp; Experience</h2>
+          <p class="section-subtitle">My academic foundations, technical certifications, and industry internship background.</p>
+        </div>
+
+        <div class="timeline-container">
+          <!-- Timeline Item 1: B.E. Degree (Left) -->
+          <div class="timeline-item left fade-in-up">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2021 – 2025</span>
+              <h3 class="timeline-title">Bachelor of Engineering (B.E.)</h3>
+              <div class="timeline-institute">[COLLEGE NAME], Chennai</div>
+              <p class="timeline-desc">
+                Computer Science &amp; Engineering. Core coursework: Object-Oriented Programming (OOP), Database Management Systems (DBMS), Computer Networks, Software Engineering, and Operating Systems.
+              </p>
+              <span class="timeline-badge">CGPA: [8.5 / 10]</span>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2: AI Internship (Right) -->
+          <div class="timeline-item right fade-in-up">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">July 2025 – August 2025</span>
+              <h3 class="timeline-title">Artificial Intelligence Intern</h3>
+              <div class="timeline-institute">EdiGlobe (Zhagaram Technologies)</div>
+              <p class="timeline-desc">
+                Engaged in AI-driven problem solving, machine learning model testing, and analytical engineering. Conducted model validation and error analysis for classification tasks.
+              </p>
+              <div class="timeline-badge">Verification ID: EGN1431</div>
+              <div>
+                <a href="assets/certificates/ediglobe_internship.pdf" target="_blank" rel="noopener noreferrer" class="timeline-link">
+                  View Certificate <span>↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3: Full Stack Certification (Left) -->
+          <div class="timeline-item left fade-in-up">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2025 (3 Months)</span>
+              <h3 class="timeline-title">Full Stack Web Development Certification</h3>
+              <div class="timeline-institute">Professional Training Academy</div>
+              <p class="timeline-desc">
+                Comprehensive training covering end-to-end full-stack applications, JavaScript frameworks, RESTful API design, relational database integration, and Git collaborative workflows.
+              </p>
+              <div>
+                <a href="assets/certificates/fullstack_cert.pdf" target="_blank" rel="noopener noreferrer" class="timeline-link">
+                  View Certificate <span>↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 4: Class XII (Right) -->
+          <div class="timeline-item right fade-in-up">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2020 – 2021</span>
+              <h3 class="timeline-title">Higher Secondary Education (Class XII)</h3>
+              <div class="timeline-institute">[SCHOOL NAME], Chennai</div>
+              <p class="timeline-desc">
+                Major in Computer Science, Mathematics, and Physics. Developed solid analytical reasoning, problem solving, and early programming basics.
+              </p>
+              <span class="timeline-badge">Score: [90%]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         8. CONTACT SECTION
+         ========================================================================== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-tag">Let's Connect</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Interested in hiring me or collaborating on an engineering project? Send a message or connect directly.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Column: Contact Channels & Direct Links -->
+          <div class="contact-info-panel fade-in-up">
+            <p class="contact-intro-text">
+              I am actively interviewing for <strong>Software Engineer, Web Developer, and Full-Stack roles</strong> in Chennai and remote worldwide. Feel free to reach out directly via email or connect through professional networks!
+            </p>
+
+            <div class="contact-channel-list">
+              <!-- Email -->
+              <a href="mailto:archanagottam123@gmail.com" class="channel-item">
+                <div class="channel-icon" aria-hidden="true">✉️</div>
+                <div class="channel-meta">
+                  <span class="channel-label">Email</span>
+                  <span class="channel-value">archanagottam123@gmail.com</span>
+                </div>
+              </a>
+
+              <!-- Location -->
+              <div class="channel-item">
+                <div class="channel-icon" aria-hidden="true">📍</div>
+                <div class="channel-meta">
+                  <span class="channel-label">Location</span>
+                  <span class="channel-value">Chennai, Tamil Nadu, India</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Media Buttons (Real profiles, no generic placeholders) -->
+            <div class="social-links-row">
+              <a href="https://github.com/indhud2005" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="B. Indhuja on GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                GitHub
+              </a>
+
+              <a href="https://www.linkedin.com/in/indhuja-bandreddi-a0757a361/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="B. Indhuja on LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                LinkedIn
+              </a>
+
+              <a href="https://leetcode.com/u/indhud2005" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="B. Indhuja on LeetCode">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.874 5.874 0 0 0 .349 1.017 5.938 5.938 0 0 0 .571.99 5.867 5.867 0 0 0 2.128 1.946l3.228 1.9 3.208 1.884c.83.489 1.815.751 2.822.751 1.008 0 1.993-.262 2.823-.751l3.208-1.884 3.227-1.9a5.867 5.867 0 0 0 2.129-1.946 5.938 5.938 0 0 0 .57-.99 5.874 5.874 0 0 0 .35-1.017 5.527 5.527 0 0 0 .062-2.362 5.35 5.35 0 0 0-.125-.513 5.266 5.266 0 0 0-1.21-2.104l-3.853-4.126-5.406-5.788A1.374 1.374 0 0 0 13.483 0z"/>
+                </svg>
+                LeetCode
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Working Contact Form -->
+          <div class="contact-form-card fade-in-up">
+            <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+              <div id="form-status" class="form-status" role="alert"></div>
+
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name *</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Rahul Sharma" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address *</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="name@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="subject" class="form-label">Subject *</label>
+                <input type="text" id="subject" name="subject" class="form-control" placeholder="Job Opportunity / Project Collaboration" required>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Message *</label>
+                <textarea id="message" name="message" class="form-control" rows="4" placeholder="Hello Indhuja, we came across your portfolio and would like to discuss..." required></textarea>
+              </div>
+
+              <button type="submit" id="form-submit-btn" class="btn btn-primary" style="width: 100%;">
+                Send Message
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       9. FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-text">
+        &copy; 2026 Indhuja Bandreddi. All Rights Reserved. Designed &amp; Built in Chennai.
+      </div>
+      <a href="#" class="footer-back-to-top" aria-label="Scroll back to the top of the page">
+        Back to top
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
+

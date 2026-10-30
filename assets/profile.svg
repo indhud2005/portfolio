@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="cyberCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="50%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#14b8a6" />
+    </linearGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5d0b5" />
+      <stop offset="100%" stop-color="#e2b192" />
+    </linearGradient>
+    <linearGradient id="jacket" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Circular Base -->
+  <circle cx="200" cy="200" r="190" fill="url(#bgGlow)" />
+  <circle cx="200" cy="200" r="188" fill="none" stroke="url(#cyberCyan)" stroke-width="3" opacity="0.6"/>
+
+  <!-- Background Decorative Tech Grid & Orbit Lines -->
+  <circle cx="200" cy="200" r="160" fill="none" stroke="#06b6d4" stroke-width="1" stroke-dasharray="6,6" opacity="0.3"/>
+  <circle cx="200" cy="200" r="130" fill="none" stroke="#14b8a6" stroke-width="1" stroke-dasharray="4,8" opacity="0.2"/>
+
+  <!-- Code elements background floating -->
+  <text x="50" y="110" font-family="'JetBrains Mono', monospace" font-size="12" fill="#06b6d4" opacity="0.4">&lt;dev&gt;</text>
+  <text x="310" y="130" font-family="'JetBrains Mono', monospace" font-size="12" fill="#14b8a6" opacity="0.4">{"code"}</text>
+  <text x="60" y="290" font-family="'JetBrains Mono', monospace" font-size="12" fill="#0ea5e9" opacity="0.4">async()</text>
+  <text x="300" y="280" font-family="'JetBrains Mono', monospace" font-size="12" fill="#22d3ee" opacity="0.4">λ =&gt; true</text>
+
+  <!-- Hair Back -->
+  <path d="M120 180 C110 110, 290 110, 280 180 C290 260, 270 310, 270 310 L130 310 C130 310, 110 260, 120 180 Z" fill="#1e1b2e" />
+
+  <!-- Shoulders & Body / Tech Hoodie -->
+  <path d="M90 380 C100 295, 140 280, 200 280 C260 280, 300 295, 310 380 Z" fill="url(#jacket)" />
+  <path d="M165 285 L200 340 L235 285 Z" fill="#06b6d4" opacity="0.2" />
+  <!-- Neon Collar Trim -->
+  <path d="M150 285 Q200 325 250 285" fill="none" stroke="url(#cyberCyan)" stroke-width="3" />
+
+  <!-- Neck -->
+  <path d="M180 230 L220 230 L220 280 L180 280 Z" fill="url(#skin)" />
+  <path d="M180 250 Q200 265 220 250 L220 280 L180 280 Z" fill="#d49e7d" opacity="0.4"/>
+
+  <!-- Head / Face -->
+  <ellipse cx="200" cy="195" rx="55" ry="65" fill="url(#skin)" />
+
+  <!-- Hair Front / Bangs -->
+  <path d="M145 180 C145 130, 255 130, 255 180 C255 150, 230 140, 200 145 C170 140, 145 155, 145 180 Z" fill="#2d2238" />
+  <path d="M145 170 Q175 140 220 160 Q240 145 255 170 C250 210, 250 230, 250 230 C240 190, 230 180, 220 180 C200 180, 170 190, 150 230 C150 230, 145 200, 145 170 Z" fill="#1e1b2e" />
+
+  <!-- Sleek Tech Glasses -->
+  <rect x="155" y="175" width="36" height="24" rx="6" fill="#090d16" fill-opacity="0.6" stroke="url(#cyberCyan)" stroke-width="2.5" />
+  <rect x="209" y="175" width="36" height="24" rx="6" fill="#090d16" fill-opacity="0.6" stroke="url(#cyberCyan)" stroke-width="2.5" />
+  <line x1="191" y1="187" x2="209" y2="187" stroke="url(#cyberCyan)" stroke-width="2.5" />
+  <!-- Glass lens reflection -->
+  <path d="M160 180 L175 180 L163 195 L158 195 Z" fill="#ffffff" opacity="0.3" />
+  <path d="M214 180 L229 180 L217 195 L212 195 Z" fill="#ffffff" opacity="0.3" />
+
+  <!-- Eyes behind glasses -->
+  <ellipse cx="173" cy="187" rx="5" ry="4" fill="#1e293b" />
+  <ellipse cx="227" cy="187" rx="5" ry="4" fill="#1e293b" />
+  <circle cx="175" cy="185" r="1.5" fill="#ffffff" />
+  <circle cx="229" cy="185" r="1.5" fill="#ffffff" />
+
+  <!-- Eyebrows -->
+  <path d="M160 170 Q173 166 186 170" fill="none" stroke="#2d2238" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M214 170 Q227 166 240 170" fill="none" stroke="#2d2238" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Nose & Smile -->
+  <path d="M198 198 L197 207 L204 208" fill="none" stroke="#d49e7d" stroke-width="2" stroke-linecap="round"/>
+  <path d="M188 222 Q200 232 212 222" fill="none" stroke="#b86b62" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Modern Audio / Dev Headset -->
+  <path d="M142 165 C135 180, 135 200, 140 215" fill="none" stroke="url(#cyberCyan)" stroke-width="5" stroke-linecap="round" />
+  <rect x="135" y="180" width="10" height="26" rx="4" fill="#06b6d4" />
+  <path d="M258 165 C265 180, 265 200, 260 215" fill="none" stroke="url(#cyberCyan)" stroke-width="5" stroke-linecap="round" />
+  <rect x="255" y="180" width="10" height="26" rx="4" fill="#06b6d4" />
+  <!-- Headband -->
+  <path d="M142 170 C140 100, 260 100, 258 170" fill="none" stroke="#334155" stroke-width="4" />
+
+  <!-- Outer Neon Rings / Glowing Nodes -->
+  <circle cx="80" cy="150" r="4" fill="#06b6d4" filter="url(#glowFilter)"/>
+  <circle cx="320" cy="230" r="5" fill="#14b8a6" filter="url(#glowFilter)"/>
+  <circle cx="110" cy="310" r="3" fill="#22d3ee" filter="url(#glowFilter)"/>
+  <circle cx="300" cy="90" r="3" fill="#06b6d4" filter="url(#glowFilter)"/>
+</svg>
+
