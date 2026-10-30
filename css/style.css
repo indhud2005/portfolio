@@ -823,38 +823,30 @@ a, button, input, textarea {
   color: var(--text-secondary);
   font-weight: 500;
 }
-.certifications-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+.soft-skills-card {
+  margin-top: 2rem;
 }
-@media (max-width: 992px) { .certifications-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 600px) { .certifications-grid { grid-template-columns: 1fr; } }
 
-.cert-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
+.skill-card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
-.cert-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0, 200, 255, 0.2);
+
+.skill-card-title {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
 }
-.cert-img { width: 100%; height: 190px; object-fit: cover; display: block; }
-.cert-body { padding: 18px; }
-.cert-title { font-size: 1.05rem; margin-bottom: 6px; }
-.cert-issuer { font-size: 0.9rem; opacity: 0.8; margin-bottom: 12px; }
-.cert-skills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
-.cert-chip { font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; background: rgba(0, 200, 255, 0.15); }
-.cert-btn { display: inline-block; font-weight: 600; text-decoration: none; color: inherit; }
-.cert-btn:hover { text-decoration: underline; }
+
 .soft-skills-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  margin-top: 16px;
 }
 
 .soft-skill {
@@ -862,9 +854,10 @@ a, button, input, textarea {
   align-items: center;
   gap: 10px;
   padding: 12px 14px;
-  border-radius: 12px;
-  background: rgba(0, 200, 255, 0.1);
-  border: 1px solid rgba(0, 200, 255, 0.25);
+  border-radius: var(--radius-md);
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid var(--border-highlight);
+  color: var(--text-primary);
   font-weight: 500;
   font-size: 0.95rem;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -872,14 +865,17 @@ a, button, input, textarea {
 
 .soft-skill:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 200, 255, 0.2);
+  box-shadow: var(--accent-glow);
 }
 
-.soft-icon { font-size: 1.3rem; }
+.soft-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
 
 @media (max-width: 480px) {
   .soft-skills-list { grid-template-columns: 1fr; }
-}v
+}
 
 /* ==========================================================================
    4. ABOUT ME
@@ -1243,6 +1239,12 @@ a, button, input, textarea {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
+.project-image-box.img-fallback {
+  background:
+    radial-gradient(circle at 75% 25%, rgba(20, 184, 166, 0.28), transparent 38%),
+    linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
 .project-img {
   width: 100%;
   height: 100%;
@@ -1355,7 +1357,7 @@ a, button, input, textarea {
 }
 
 /* ==========================================================================
-   NEW SECTION: CERTIFICATIONS
+   7. CERTIFICATIONS
    ========================================================================== */
 .certifications-grid {
   display: grid;
@@ -1367,7 +1369,6 @@ a, button, input, textarea {
   background: var(--bg-card);
   border: 1px solid var(--bg-card-border);
   border-radius: var(--radius-lg);
-  padding: 1.8rem;
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(12px);
@@ -1375,6 +1376,20 @@ a, button, input, textarea {
   transition: transform var(--transition-medium), box-shadow var(--transition-medium), border-color var(--transition-medium);
   position: relative;
   overflow: hidden;
+}
+
+.cert-img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.cert-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.5rem;
 }
 
 .cert-card::before {
@@ -1431,11 +1446,9 @@ a, button, input, textarea {
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--text-accent);
-  text-transform: uppercase;
   letter-spacing: 0.04em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
 .cert-date {
@@ -1457,6 +1470,23 @@ a, button, input, textarea {
   flex-wrap: wrap;
   gap: 0.4rem;
   margin-bottom: 1.5rem;
+}
+
+.cert-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.cert-chip {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+  background: rgba(6, 182, 212, 0.1);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
 }
 
 .cert-tag {
@@ -1486,6 +1516,7 @@ a, button, input, textarea {
   font-weight: 600;
   border-radius: var(--radius-md);
   text-decoration: none;
+  margin-top: auto;
   background: rgba(6, 182, 212, 0.1);
   border: 1px solid var(--border-highlight);
   color: var(--text-accent);
@@ -1501,7 +1532,7 @@ a, button, input, textarea {
 }
 
 /* ==========================================================================
-   7. EDUCATION & MILESTONES (TIMELINE)
+   8. EDUCATION & MILESTONES (TIMELINE)
    ========================================================================== */
 .timeline-container {
   position: relative;
@@ -1636,7 +1667,7 @@ a, button, input, textarea {
 }
 
 /* ==========================================================================
-   8. CONTACT SECTION
+   9. CONTACT SECTION
    ========================================================================== */
 .contact-grid {
   display: grid;
@@ -1815,8 +1846,12 @@ textarea.form-control {
   color: #f87171;
 }
 
+[data-theme="light"] .form-status.error {
+  color: #b91c1c;
+}
+
 /* ==========================================================================
-   9. FOOTER
+   10. FOOTER
    ========================================================================== */
 .site-footer {
   background: var(--bg-secondary);
@@ -1905,6 +1940,26 @@ textarea.form-control {
   transform: translateY(0);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .fade-in-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* ==========================================================================
    RESPONSIVE DESIGN (BREAKPOINTS)
    ========================================================================== */
@@ -1936,10 +1991,7 @@ textarea.form-control {
   }
 }
 
-@media (max-width: 768px) {
-  .certifications-grid {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 1100px) {
   .hamburger-btn {
     display: flex;
   }
@@ -1959,6 +2011,7 @@ textarea.form-control {
     transform: translateY(-150%);
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
     transition: transform 0.35s ease, opacity 0.35s ease;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
   }
@@ -1967,6 +2020,7 @@ textarea.form-control {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+    visibility: visible;
   }
 
   .nav-links a {
@@ -1974,6 +2028,12 @@ textarea.form-control {
     width: 100%;
     text-align: center;
     padding: 0.6rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .certifications-grid {
+    grid-template-columns: 1fr;
   }
 
   /* Single Column Timeline on Mobile */
@@ -2021,6 +2081,31 @@ textarea.form-control {
     padding-right: 1rem;
   }
 
+  .site-header .nav-container {
+    gap: 0.5rem;
+  }
+
+  .site-header .brand-logo {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 1rem;
+  }
+
+  .nav-actions {
+    flex: 0 0 auto;
+    gap: 0.5rem;
+  }
+
+  .site-header .nav-actions > .btn {
+    width: 40px;
+    min-width: 40px;
+    gap: 0;
+    padding: 0.5rem;
+    font-size: 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
   .section {
     padding: 4rem 0;
   }
@@ -2057,6 +2142,10 @@ textarea.form-control {
   }
 
   .skill-category-card {
+    padding: 1.4rem;
+  }
+
+  .skill-card {
     padding: 1.4rem;
   }
 

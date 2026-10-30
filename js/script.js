@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTerminalTyping();
   initSkillBars();
   initProjects();
-  initCertifications();
+  renderCertificates();
   initContactForm();
   initScrollAnimations();
 });
@@ -28,9 +28,7 @@ function initThemeToggle() {
 
   // Check saved preference or system preference
   const savedTheme = localStorage.getItem('portfolio-theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
-  const currentTheme = savedTheme || (prefersDark ? 'dark' : 'dark'); // Default to dark aesthetic
+  const currentTheme = savedTheme === 'light' ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', currentTheme);
   themeToggleBtn.setAttribute('aria-label', `Switch to ${currentTheme === 'dark' ? 'light' : 'dark'} mode`);
 
@@ -74,6 +72,14 @@ function initMobileNavigation() {
   }
 
   hamburgerBtn.addEventListener('click', toggleMenu);
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1100 && navLinks.classList.contains('mobile-open')) {
+      hamburgerBtn.classList.remove('active');
+      navLinks.classList.remove('mobile-open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
 
   // Close mobile drawer when a nav link is clicked
   navLinks.querySelectorAll('a').forEach(link => {
@@ -283,35 +289,35 @@ function initSkillBars() {
 /**
  * Projects Master Array:
  * Easily edit, add, or remove projects by updating this object list!
- * If liveUrl is empty (""), the "Live Demo" button is automatically omitted.
+ * If a project URL is empty (""), its project or GitHub button is omitted.
  */
 const projectsData = [
   {
     title: "LastBite - The Last Bite Deals",
     category: "Web Dev",
     description: "A smart, AI-driven surplus food redistribution platform that acts as a real-time bridge between food service establishments (restaurants, caterers) and recipient organizations (NGOs, shelters, orphanages). It uses predictive analytics to forecast surplus food and a smart matching engine to pair donations with the nearest, most suitable recipients, so perishable food is collected quickly. It also provides actionable analytics that help businesses prevent food waste at the source.",
-    tags: ["Web Development", "AI", "Predictive Analytics"],   // TODO: add your actual tech stack
-    image: "assets/projects/lastbite.png",
-    projectUrl: "https://indhud2005.github.io/YOUR-LASTBITE-REPO",   // TODO: live project link
-    githubUrl: "https://github.com/indhud2005/YOUR-LASTBITE-REPO"    // TODO: repo link
+    tags: ["Web Development", "AI", "Predictive Analytics"],
+    image: "",
+    liveUrl: "",
+    githubUrl: ""
   },
   {
     title: "Intelligent Email Classification & Sentiment Analysis (Mail Sorting)",
     category: "AI",
     description: "A Machine Learning and NLP based system that automates email management. It performs NLP preprocessing (tokenization, stop-word removal, vectorization) and classifies emails into Work, Social, Promotions and Spam using Multinomial Naive Bayes and SVM. It also uses VADER to detect positive, negative or neutral sentiment, then generates a dynamic priority score shown on an interactive Streamlit dashboard so users can quickly address critical communications.",
     tags: ["Python", "Scikit-Learn", "Naive Bayes", "SVM", "NLTK", "VADER", "Streamlit"],
-    image: "assets/projects/mail-sorting.png",
-    projectUrl: "https://YOUR-APP.streamlit.app",                   // TODO: Streamlit app link
-    githubUrl: "https://github.com/indhud2005/YOUR-MAIL-REPO"       // TODO: repo link
+    image: "",
+    liveUrl: "",
+    githubUrl: ""
   },
   {
     title: "CampusEvent - College Event Ticket Booking System",
-    category: "Web Dev",
+    category: "Software Eng",
     description: "A full-stack web application that streamlines booking and management of internal college events such as tech fests, workshops and cultural events. Students can browse upcoming events, view real-time seat availability and book tickets securely. The Spring Boot backend exposes RESTful APIs, handles concurrent booking requests, prevents double-booking and manages event capacities, while the H2 in-memory database keeps data retrieval fast and deployment simple.",
     tags: ["Java", "Spring Boot", "REST APIs", "H2 Database"],
-    image: "assets/projects/campusevent.png",
-    projectUrl: "https://YOUR-CAMPUSEVENT-LINK",                    // TODO: live link (or leave "" to hide)
-    githubUrl: "https://github.com/indhud2005/YOUR-CAMPUSEVENT-REPO" // TODO: repo link
+    image: "",
+    liveUrl: "",
+    githubUrl: ""
   }
 ];
 
@@ -339,8 +345,8 @@ function initProjects() {
         .join('');
 
       // "Go to Project" button (hidden if no URL)
-      const projectBtnHtml = project.projectUrl && project.projectUrl.trim() !== ''
-        ? `<a href="${project.projectUrl}" target="_blank" rel="noopener noreferrer"
+      const projectBtnHtml = project.liveUrl && project.liveUrl.trim() !== ''
+        ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer"
               class="project-btn project-btn-demo"
               aria-label="Go to ${project.title}">
              Go to Project →
@@ -360,13 +366,17 @@ function initProjects() {
         : '';
 
       // Layout: image on top -> description under the image -> tags -> buttons
-      card.innerHTML = `
-        <div class="project-image-box">
-          <img src="${project.image}"
+      const imageHtml = project.image
+        ? `<img src="${project.image}"
                alt="${project.title} screenshot"
                class="project-img"
                loading="lazy"
-               onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback');" />
+               onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback');" />`
+        : '';
+
+      card.innerHTML = `
+        <div class="project-image-box">
+          ${imageHtml}
           <span class="project-badge-tag">${project.category}</span>
         </div>
         <div class="project-body">
@@ -390,8 +400,12 @@ function initProjects() {
   // Filter button handlers
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('active'));
+      filterButtons.forEach(button => {
+        button.classList.remove('active');
+        button.setAttribute('aria-selected', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
       renderProjects(btn.getAttribute('data-filter'));
     });
   });
@@ -452,7 +466,6 @@ function renderCertificates() {
   `).join("");
 }
 
-document.addEventListener("DOMContentLoaded", renderCertificates);
 /* ==========================================================================
    11. CONTACT FORM VALIDATION & FORMSPREE SUBMISSION
    ========================================================================== */
@@ -462,6 +475,8 @@ function initContactForm() {
   const submitBtn = document.getElementById('form-submit-btn');
 
   if (!form || !statusBanner || !submitBtn) return;
+
+  const actionUrl = form.getAttribute('action') || '';
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -489,6 +504,11 @@ function initContactForm() {
       return;
     }
 
+    if (!/^https:\/\/formspree\.io\/f\/[A-Za-z0-9]+$/.test(actionUrl)) {
+      showStatus('The contact form is not configured yet. Add your Formspree form ID to index.html before sending messages.', 'error');
+      return;
+    }
+
     // Set sending state
     const originalBtnText = submitBtn.innerHTML;
     submitBtn.disabled = true;
@@ -497,7 +517,6 @@ function initContactForm() {
 
     try {
       const formData = new FormData(form);
-      const actionUrl = form.getAttribute('action');
 
       const response = await fetch(actionUrl, {
         method: 'POST',
@@ -511,18 +530,21 @@ function initContactForm() {
         showStatus('Thank you! Your message has been sent successfully. I will get back to you shortly.', 'success');
         form.reset();
       } else {
-        const data = await response.json().catch(() => null);
-        if (data && data.errors) {
+        let data;
+        try {
+          data = await response.json();
+        } catch {
+          data = null;
+        }
+
+        if (data?.errors?.length) {
           showStatus(data.errors.map(err => err.message).join(', '), 'error');
         } else {
-          showStatus('Thank you for reaching out! (Form endpoint simulated or ready for your Formspree ID).', 'success');
-          form.reset();
+          showStatus('The message could not be sent. Please try again later.', 'error');
         }
       }
-    } catch (err) {
-      // Fallback message for development or offline testing
-      showStatus('Note: Update YOUR_FORM_ID in index.html to receive real Formspree emails directly in your inbox.', 'success');
-      form.reset();
+    } catch {
+      showStatus('Unable to send your message. Check your connection and try again.', 'error');
     } finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalBtnText;
@@ -556,4 +578,3 @@ function initScrollAnimations() {
 
   animatedElements.forEach(el => observer.observe(el));
 }
-
