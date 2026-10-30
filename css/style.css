@@ -823,6 +823,63 @@ a, button, input, textarea {
   color: var(--text-secondary);
   font-weight: 500;
 }
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 992px) { .certifications-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .certifications-grid { grid-template-columns: 1fr; } }
+
+.cert-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.cert-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 200, 255, 0.2);
+}
+.cert-img { width: 100%; height: 190px; object-fit: cover; display: block; }
+.cert-body { padding: 18px; }
+.cert-title { font-size: 1.05rem; margin-bottom: 6px; }
+.cert-issuer { font-size: 0.9rem; opacity: 0.8; margin-bottom: 12px; }
+.cert-skills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.cert-chip { font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; background: rgba(0, 200, 255, 0.15); }
+.cert-btn { display: inline-block; font-weight: 600; text-decoration: none; color: inherit; }
+.cert-btn:hover { text-decoration: underline; }
+.soft-skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.soft-skill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(0, 200, 255, 0.1);
+  border: 1px solid rgba(0, 200, 255, 0.25);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.soft-skill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 200, 255, 0.2);
+}
+
+.soft-icon { font-size: 1.3rem; }
+
+@media (max-width: 480px) {
+  .soft-skills-list { grid-template-columns: 1fr; }
+}v
 
 /* ==========================================================================
    4. ABOUT ME

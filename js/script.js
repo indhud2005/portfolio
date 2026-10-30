@@ -287,40 +287,31 @@ function initSkillBars() {
  */
 const projectsData = [
   {
-    title: "RecruitLink - Job Board",
+    title: "LastBite - The Last Bite Deals",
     category: "Web Dev",
-    description: "Full-stack job discovery platform with search filters, employer dashboard, and real-time application tracking.",
-    tags: ["React", "Node.js", "MySQL", "CSS Grid"],
-    image: "assets/projects/project1.svg",
-    liveUrl: "https://indhud2005.github.io/recruitlink-demo",
-    githubUrl: "https://github.com/indhud2005/recruitlink-job-board"
+    description: "A smart, AI-driven surplus food redistribution platform that acts as a real-time bridge between food service establishments (restaurants, caterers) and recipient organizations (NGOs, shelters, orphanages). It uses predictive analytics to forecast surplus food and a smart matching engine to pair donations with the nearest, most suitable recipients, so perishable food is collected quickly. It also provides actionable analytics that help businesses prevent food waste at the source.",
+    tags: ["Web Development", "AI", "Predictive Analytics"],   // TODO: add your actual tech stack
+    image: "assets/projects/lastbite.png",
+    projectUrl: "https://indhud2005.github.io/YOUR-LASTBITE-REPO",   // TODO: live project link
+    githubUrl: "https://github.com/indhud2005/YOUR-LASTBITE-REPO"    // TODO: repo link
   },
   {
-    title: "TaskForge - Task Scheduler",
-    category: "Software Eng",
-    description: "Desktop process and task scheduler utilizing algorithmic priority queues, concurrency simulation, and event reminders.",
-    tags: ["Java", "OOP", "Algorithms", "Swing"],
-    image: "assets/projects/project2.svg",
-    liveUrl: "", // Empty string hides Live Demo button cleanly
-    githubUrl: "https://github.com/indhud2005/taskforge-scheduler"
-  },
-  {
-    title: "Skycast - Weather Dashboard",
-    category: "Web Dev",
-    description: "Dynamic weather portal fetching multi-city meteorological forecasts with UV indices, humidity analytics, and forecast charts.",
-    tags: ["HTML5", "Vanilla JS", "REST API", "CSS"],
-    image: "assets/projects/project3.svg",
-    liveUrl: "https://indhud2005.github.io/skycast-weather-app",
-    githubUrl: "https://github.com/indhud2005/skycast-weather-app"
-  },
-  {
-    title: "NeuroVision - AI Image Classifier",
+    title: "Intelligent Email Classification & Sentiment Analysis (Mail Sorting)",
     category: "AI",
-    description: "Deep convolutional image classification model trained on custom datasets with high-confidence probability score analytics.",
-    tags: ["Python", "TensorFlow", "OpenCV", "Flask"],
-    image: "assets/projects/project4.svg",
-    liveUrl: "", // Empty string hides Live Demo button cleanly
-    githubUrl: "https://github.com/indhud2005/neurovision-ai-classifier"
+    description: "A Machine Learning and NLP based system that automates email management. It performs NLP preprocessing (tokenization, stop-word removal, vectorization) and classifies emails into Work, Social, Promotions and Spam using Multinomial Naive Bayes and SVM. It also uses VADER to detect positive, negative or neutral sentiment, then generates a dynamic priority score shown on an interactive Streamlit dashboard so users can quickly address critical communications.",
+    tags: ["Python", "Scikit-Learn", "Naive Bayes", "SVM", "NLTK", "VADER", "Streamlit"],
+    image: "assets/projects/mail-sorting.png",
+    projectUrl: "https://YOUR-APP.streamlit.app",                   // TODO: Streamlit app link
+    githubUrl: "https://github.com/indhud2005/YOUR-MAIL-REPO"       // TODO: repo link
+  },
+  {
+    title: "CampusEvent - College Event Ticket Booking System",
+    category: "Web Dev",
+    description: "A full-stack web application that streamlines booking and management of internal college events such as tech fests, workshops and cultural events. Students can browse upcoming events, view real-time seat availability and book tickets securely. The Spring Boot backend exposes RESTful APIs, handles concurrent booking requests, prevents double-booking and manages event capacities, while the H2 in-memory database keeps data retrieval fast and deployment simple.",
+    tags: ["Java", "Spring Boot", "REST APIs", "H2 Database"],
+    image: "assets/projects/campusevent.png",
+    projectUrl: "https://YOUR-CAMPUSEVENT-LINK",                    // TODO: live link (or leave "" to hide)
+    githubUrl: "https://github.com/indhud2005/YOUR-CAMPUSEVENT-REPO" // TODO: repo link
   }
 ];
 
@@ -335,32 +326,47 @@ function initProjects() {
 
     const filtered = filter === 'all'
       ? projectsData
-      : projectsData.filter(p => p.category.toLowerCase().replace(/\s+/g, '') === filter.toLowerCase().replace(/\s+/g, ''));
+      : projectsData.filter(p =>
+          p.category.toLowerCase().replace(/\s+/g, '') === filter.toLowerCase().replace(/\s+/g, ''));
 
-    filtered.forEach((project, idx) => {
+    filtered.forEach(project => {
       const card = document.createElement('article');
       card.className = 'project-card fade-in-up in-view';
       card.setAttribute('data-category', project.category);
 
-      // Tech tags HTML
       const tagsHtml = project.tags
         .map(t => `<span class="tech-chip">${t}</span>`)
         .join('');
 
-      // Conditional Live Demo button
-      const liveBtnHtml = project.liveUrl && project.liveUrl.trim() !== ''
-        ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-demo" aria-label="View live demo of ${project.title}">
-             <span>🔴</span> Live Demo
+      // "Go to Project" button (hidden if no URL)
+      const projectBtnHtml = project.projectUrl && project.projectUrl.trim() !== ''
+        ? `<a href="${project.projectUrl}" target="_blank" rel="noopener noreferrer"
+              class="project-btn project-btn-demo"
+              aria-label="Go to ${project.title}">
+             Go to Project →
            </a>`
         : '';
 
+      // GitHub button (hidden if no URL)
+      const githubBtnHtml = project.githubUrl && project.githubUrl.trim() !== ''
+        ? `<a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer"
+              class="project-btn project-btn-code"
+              aria-label="View source code of ${project.title} on GitHub">
+             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+             </svg>
+             GitHub
+           </a>`
+        : '';
+
+      // Layout: image on top -> description under the image -> tags -> buttons
       card.innerHTML = `
         <div class="project-image-box">
-          <img src="${project.image}" 
-               alt="${project.title} screenshot" 
-               class="project-img" 
-               loading="lazy" 
-               onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'800\\' height=\\'450\\' viewBox=\\'0 0 800 450\\'><rect width=\\'800\\' height=\\'450\\' fill=\\'%230f172a\\'/><text x=\\'50%\\' y=\\'50%\\' dominant-baseline=\\'middle\\' text-anchor=\\'middle\\' fill=\\'%2306b6d4\\' font-family=\\'sans-serif\\' font-size=\\'22\\'>${encodeURIComponent(project.title)}</text></svg>';" />
+          <img src="${project.image}"
+               alt="${project.title} screenshot"
+               class="project-img"
+               loading="lazy"
+               onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback');" />
           <span class="project-badge-tag">${project.category}</span>
         </div>
         <div class="project-body">
@@ -368,13 +374,8 @@ function initProjects() {
           <p class="project-desc">${project.description}</p>
           <div class="project-tags">${tagsHtml}</div>
           <div class="project-actions">
-            ${liveBtnHtml}
-            <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-code" aria-label="View source code of ${project.title} on GitHub">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-              GitHub
-            </a>
+            ${projectBtnHtml}
+            ${githubBtnHtml}
           </div>
         </div>
       `;
@@ -391,8 +392,7 @@ function initProjects() {
     btn.addEventListener('click', () => {
       filterButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const filterValue = btn.getAttribute('data-filter');
-      renderProjects(filterValue);
+      renderProjects(btn.getAttribute('data-filter'));
     });
   });
 }
@@ -405,81 +405,54 @@ function initProjects() {
  * Easily edit, add, or remove certificates by updating this object list!
  * If link is empty (""), the "View Certificate" button is automatically omitted.
  */
-const certificatesData = [
+// ===== CERTIFICATIONS =====
+const certificates = [
   {
     title: "NodeJS Case Study - Movie App on Node JS and MongoDB",
-    issuer: "Infosys (Infosys Springboard)",
-    date: "[MONTH YEAR]",
-    link: "[CERTIFICATE URL]",
+    issuer: "Infosys Springboard",
+    date: "Month Year",
     skills: ["Node.js", "MongoDB", "REST APIs"],
-    icon: `<i class="devicon-nodejs-plain colored"></i>`
+    image: "assets/certificates/nodejs-infosys.png",
+    link: "assets/certificates/nodejs-infosys.png"
   },
   {
     title: "Introduction to Data Science",
-    issuer: "Cisco (Cisco Networking Academy)",
-    date: "[MONTH YEAR]",
-    link: "[CERTIFICATE URL or Credly badge URL]",
+    issuer: "Cisco Networking Academy",
+    date: "Month Year",
     skills: ["Data Science", "Data Analysis"],
-    icon: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>`
+    image: "assets/certificates/datascience-cisco.png",
+    link: "assets/certificates/datascience-cisco.png"
   },
   {
     title: "Introduction to Generative AI",
-    issuer: "AWS (Amazon Web Services)",
-    date: "[MONTH YEAR]",
-    link: "[CERTIFICATE URL]",
+    issuer: "AWS",
+    date: "Month Year",
     skills: ["Generative AI", "Cloud", "AI Fundamentals"],
-    icon: `<i class="devicon-amazonwebservices-plain colored"></i>`
+    image: "assets/certificates/genai-aws.png",
+    link: "assets/certificates/genai-aws.png"
   }
 ];
 
-function initCertifications() {
-  const certsGrid = document.getElementById('certifications-grid');
-  if (!certsGrid) return;
+function renderCertificates() {
+  const grid = document.getElementById("certifications-grid");
+  if (!grid) return;
 
-  certsGrid.innerHTML = '';
-
-  certificatesData.forEach(cert => {
-    const card = document.createElement('article');
-    card.className = 'cert-card fade-in-up in-view';
-
-    // Skill tags
-    const skillsHtml = cert.skills && cert.skills.length
-      ? cert.skills.map(s => `<span class="cert-tag">${s}</span>`).join('')
-      : '';
-
-    // If link is empty (""), hide the button automatically
-    const linkBtnHtml = cert.link && cert.link.trim() !== ''
-      ? `<div class="cert-footer">
-           <a href="${cert.link}" target="_blank" rel="noopener noreferrer" class="cert-btn" aria-label="View verification for ${cert.title}">
-             View Certificate
-             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-               <polyline points="15 3 21 3 21 9"></polyline>
-               <line x1="10" y1="14" x2="21" y2="3"></line>
-             </svg>
-           </a>
-         </div>`
-      : '';
-
-    card.innerHTML = `
-      <div class="cert-header">
-        <div class="cert-icon-box" aria-hidden="true">
-          ${cert.icon}
+  grid.innerHTML = certificates.map(cert => `
+    <div class="cert-card fade-in-up">
+      ${cert.image ? `<img src="${cert.image}" alt="${cert.title} certificate" class="cert-img" loading="lazy">` : ""}
+      <div class="cert-body">
+        <h3 class="cert-title">${cert.title}</h3>
+        <p class="cert-issuer">${cert.issuer} · ${cert.date}</p>
+        <div class="cert-skills">
+          ${cert.skills.map(s => `<span class="cert-chip">${s}</span>`).join("")}
         </div>
-        <div class="cert-issuer-meta">
-          <span class="cert-issuer">${cert.issuer}</span>
-          <span class="cert-date">${cert.date}</span>
-        </div>
+        ${cert.link ? `<a href="${cert.link}" target="_blank" rel="noopener noreferrer" class="cert-btn">View Certificate ↗</a>` : ""}
       </div>
-      <h3 class="cert-title">${cert.title}</h3>
-      <div class="cert-tags">${skillsHtml}</div>
-      ${linkBtnHtml}
-    `;
-
-    certsGrid.appendChild(card);
-  });
+    </div>
+  `).join("");
 }
 
+document.addEventListener("DOMContentLoaded", renderCertificates);
 /* ==========================================================================
    11. CONTACT FORM VALIDATION & FORMSPREE SUBMISSION
    ========================================================================== */
